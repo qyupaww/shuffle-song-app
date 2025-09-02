@@ -23,32 +23,45 @@ class ShuffleSongWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(width: 0.5),
-          ),
-          padding: EdgeInsets.all(10),
-          height: 200,
-          width: 200,
-          child: Column(
-            children: [
-              Image.asset(
-                "assets/images/feast.jpg",
-                width: 140,
-                height: 140,
-              ),
-              SizedBox(height: 10),
-              const Text(
-                " Tarot - Feast.",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(width: 0.5),
                 ),
-                textAlign: TextAlign.center,
+                padding: EdgeInsets.all(10),
+                height: 200,
+                width: 200,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "assets/images/feast.jpg",
+                      width: 140,
+                      height: 140,
+                    ),
+                    SizedBox(height: 10),
+                    const Text(
+                      " Tarot - Feast.",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
+            ),
+            const Icon(
+              Icons.shuffle_on_rounded,
+              color: Colors.deepPurple,
+              size: 36,
+            ),
+          ],
         ),
       ),
     );
