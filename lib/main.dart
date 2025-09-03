@@ -107,12 +107,14 @@ class _ShuffleSongWidgetState
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: _shuffleSong,
-              child: const Icon(
-                Icons.shuffle_on_rounded,
-                color: Colors.deepPurple,
-                size: 36,
+            Center(
+              child: IconButton(
+                onPressed: _shuffleSong,
+                icon: const Icon(
+                  Icons.shuffle_on_rounded,
+                  color: Colors.deepPurple,
+                  size: 36,
+                ),
               ),
             ),
           ],
