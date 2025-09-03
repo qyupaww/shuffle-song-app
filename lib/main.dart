@@ -28,6 +28,26 @@ class ShuffleSongWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/images/spotify.jpg",
+                  width: 48,
+                  height: 48,
+                ),
+                const SizedBox(width: 4),
+                const Text(
+                  "Spotify",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
             Center(
               child: Container(
                 decoration: BoxDecoration(
