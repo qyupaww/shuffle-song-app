@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,17 +22,34 @@ class ShuffleSongApp extends StatelessWidget {
 const albumCoverList = [
   "assets/images/feast.jpg",
   "assets/images/hindia.jpeg",
-  "assets/imges/lomba-sihir.jpg",
+  "assets/images/lomba-sihir.jpg",
 ];
 
 const songTitleList = [
   "Tarot - Feast.",
   "Cincin - Hindia",
-  "Semua Orang Pernah Sakit Hati - Lomba Sihir",
+  "Ribuan Memory - Lomba Sihir",
 ];
 
-class ShuffleSongWidget extends StatelessWidget {
+class ShuffleSongWidget extends StatefulWidget {
   const ShuffleSongWidget({super.key});
+
+  @override
+  State<ShuffleSongWidget> createState() =>
+      _ShuffleSongWidgetState();
+}
+
+class _ShuffleSongWidgetState
+    extends State<ShuffleSongWidget> {
+  int _currentIndex = 0;
+
+  void _shuffleSong() {
+    Random random = Random();
+    int randomIndex = random.nextInt(3);
+    setState(() {
+      _currentIndex = randomIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,15 +90,15 @@ class ShuffleSongWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      "assets/images/feast.jpg",
+                      albumCoverList[_currentIndex],
                       width: 140,
                       height: 140,
                     ),
                     SizedBox(height: 10),
-                    const Text(
-                      " Tarot - Feast.",
-                      style: TextStyle(
-                        fontSize: 14,
+                    Text(
+                      songTitleList[_currentIndex],
+                      style: const TextStyle(
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
@@ -88,10 +107,13 @@ class ShuffleSongWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const Icon(
-              Icons.shuffle_on_rounded,
-              color: Colors.deepPurple,
-              size: 36,
+            GestureDetector(
+              onTap: _shuffleSong,
+              child: const Icon(
+                Icons.shuffle_on_rounded,
+                color: Colors.deepPurple,
+                size: 36,
+              ),
             ),
           ],
         ),
