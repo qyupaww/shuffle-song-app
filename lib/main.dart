@@ -17,6 +17,18 @@ class ShuffleSongApp extends StatelessWidget {
   }
 }
 
+const albumCoverList = [
+  "assets/images/feast.jpg",
+  "assets/images/hindia.jpeg",
+  "assets/imges/lomba-sihir.jpg",
+];
+
+const songTitleList = [
+  "Tarot - Feast.",
+  "Cincin - Hindia",
+  "Semua Orang Pernah Sakit Hati - Lomba Sihir",
+];
+
 class ShuffleSongWidget extends StatelessWidget {
   const ShuffleSongWidget({super.key});
 
